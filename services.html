@@ -42,7 +42,7 @@
 
         /* Custom CSS for Responsive Service Layout */
         .services-grid-container {
-            display: grid; /* Default to grid for smaller screens */
+            display: grid;
             grid-template-columns: 1fr; /* Single column on small screens */
             gap: 2rem; /* Spacing between items */
             justify-items: center; /* Center items in their grid cells */
@@ -72,20 +72,22 @@
         /* Large screens (lg breakpoint) */
         @media (min-width: 1024px) {
             .services-grid-container {
-                display: flex; /* Changed to flex for better centering of incomplete rows */
-                flex-wrap: wrap; /* Allow items to wrap to the next line */
-                justify-content: center; /* This centers the items in the row */
+                grid-template-columns: repeat(3, 1fr); /* 3 equal columns on large screens */
                 gap: 3rem; /* More spacing on large screens */
-                /* Removed grid-template-columns here as flex is now used */
+                justify-content: center; /* Centers the entire grid content within its container */
+                align-items: start; /* Aligns items to the start of their cells */
+                justify-items: center; /* Centers items within their cells */
             }
+            /* Reset any specific positioning for large screens */
             .service-item-card {
-                width: 380px; /* Fixed width for consistency on large screens */
-                max-width: none; /* Remove max-width to allow fixed width */
+                grid-column: auto;
+                justify-self: auto;
+                max-width: 380px; /* Re-apply max-width for consistent card size */
             }
-            /* Reset any specific positioning for large screens as flex handles it */
+            /* Ensure the 5th item doesn't span on large screens */
             .service-item-card:nth-child(5) {
-                grid-column: auto; /* Reset column span */
-                justify-self: auto; /* Reset justify-self */
+                grid-column: auto;
+                justify-self: auto;
             }
         }
     </style>
