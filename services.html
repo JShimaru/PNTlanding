@@ -40,85 +40,51 @@
             border: 0;
         }
 
-        /* Custom CSS for Responsive Pentagon-like Layout (No Overlap) */
-        .pentagon-container {
-            display: flex; /* Default to flex for smaller screens */
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: flex-start; /* Align items to the start of the flex container */
-            max-width: 1200px; /* Max width for the pentagon container */
+        /* Custom CSS for Two-Row Responsive Layout (No Overlap) */
+        .services-grid-container {
+            display: grid;
+            grid-template-columns: 1fr; /* Single column on small screens */
+            gap: 2rem; /* Spacing between items */
+            justify-items: center; /* Center items in their grid cells */
+            max-width: 1200px; /* Max width for the container */
             margin: 0 auto;
-            gap: 2rem; /* Spacing between items on smaller screens */
         }
 
-        .pentagon-item {
+        .service-item-card {
             width: 100%; /* Full width on small screens */
             max-width: 380px; /* Max width for each card */
             display: flex; /* Ensure content stretches within card */
             flex-direction: column; /* Stack content vertically */
-            position: static;
-            transform: none;
         }
 
         /* Medium screens (md breakpoint) */
-        @media (min-width: 768px) and (max-width: 1023px) {
-            .pentagon-container {
-                display: grid;
+        @media (min-width: 768px) {
+            .services-grid-container {
                 grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
-                justify-items: center; /* Center items within their grid cells */
-                align-items: flex-start;
-                gap: 2rem; /* Spacing between items */
             }
-            .pentagon-item {
-                width: auto; /* Let grid handle width */
-                margin: 0; /* Remove flex margin */
-            }
-            /* Center the last item (5th) if it's alone in a row on medium screens */
-            .pentagon-item:nth-child(5) {
+            .service-item-card:nth-child(5) { /* Center the last item if it's alone in a row */
                 grid-column: 1 / span 2; /* Make it span both columns */
                 justify-self: center; /* Center it within the spanned columns */
             }
         }
 
-        /* Large screens (lg breakpoint) specific positioning for pentagon visual */
+        /* Large screens (lg breakpoint) */
         @media (min-width: 1024px) {
-            .pentagon-container {
-                display: grid;
-                grid-template-columns: repeat(6, 1fr); /* 6 columns for fine-grained control */
-                height: auto; /* Let content define height */
-                align-items: start; /* Align items to the top of their grid cells */
-                justify-items: center; /* Center items within their grid columns */
-                gap: 2rem 1rem; /* Row gap, column gap */
-                padding-top: 0; /* Reset padding from smaller screens */
-                padding-bottom: 0; /* Reset padding from smaller screens */
+            .services-grid-container {
+                grid-template-columns: repeat(3, 1fr); /* 3 columns on large screens */
+                gap: 3rem; /* More spacing on large screens */
             }
-
-            .pentagon-item {
-                width: 320px; /* Fixed width for consistency on large screens */
-                margin: 0; /* Remove any lingering margins from smaller screens */
+            /* Reset centering for the 5th item on large screens if it's part of a 3-column layout */
+            .service-item-card:nth-child(5) {
+                grid-column: auto; /* Reset column span */
+                justify-self: auto; /* Reset justify-self */
             }
-
-            /* Positioning for each item to form a non-overlapping pentagon visual */
-            .pentagon-item:nth-child(1) { /* Hospitality Content Creation (TOP) */
-                grid-column: 3 / span 2; /* Spans 2 columns, centered in a 6-column grid */
-                margin-bottom: 2rem; /* Push down next row slightly */
-            }
-            .pentagon-item:nth-child(2) { /* Digital & Local SEO Audit (TOP-LEFT) */
-                grid-column: 1 / span 2; /* Spans 2 columns on left */
-                margin-top: 5rem; /* Push down relative to top item */
-            }
-            .pentagon-item:nth-child(3) { /* Digital Marketing Strategy (TOP-RIGHT) */
-                grid-column: 5 / span 2; /* Spans 2 columns on right */
-                margin-top: 5rem; /* Push down relative to top item */
-            }
-            .pentagon-item:nth-child(4) { /* Brand Experience & Event Strategy (BOTTOM-LEFT) */
-                grid-column: 2 / span 2; /* Spans 2 columns, shifted right to align with pentagon base */
-                margin-top: 5rem; /* Push down relative to middle row */
-            }
-            .pentagon-item:nth-child(5) { /* Operational Streamlining & Tech Integration (BOTTOM-RIGHT) */
-                grid-column: 4 / span 2; /* Spans 2 columns, shifted left to align with pentagon base */
-                margin-top: 5rem; /* Push down relative to middle row */
-            }
+            /* For 5 items in a 3-column grid, the last two will naturally be on a new row.
+               We can center them by adjusting the grid-template-columns for that row if needed,
+               but for simplicity and responsiveness, a standard 3-column grid with auto-placement
+               often works well. If explicit centering of the last two is desired,
+               a sub-grid or more complex CSS might be needed.
+               For this request, a standard grid that flows into two rows is sufficient. */
         }
     </style>
 </head>
@@ -152,16 +118,16 @@
         </div>
     </section>
 
-    <!-- Services List Section - Pentagon Layout -->
+    <!-- Services List Section - Two-Row Layout -->
     <section class="py-16 md:py-24 bg-white rounded-3xl shadow-xl mx-4 md:mx-8 -mt-16 relative z-20">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-rockwell text-center mb-12 text-rich-black">
                 How We Help Your Brand Shine
             </h2>
-            <div class="pentagon-container">
+            <div class="services-grid-container">
 
-                <!-- Service 1: Hospitality Content Creation (TOP) -->
-                <div class="pentagon-item bg-gray-50 p-8 rounded-xl shadow-md border border-muted-silver-gray hover:shadow-lg transition duration-300 flex flex-col">
+                <!-- Service 1: Hospitality Content Creation (TOP-LEFT in 3-col, TOP in 2-col) -->
+                <div class="service-item-card bg-gray-50 p-8 rounded-xl shadow-md border border-muted-silver-gray hover:shadow-lg transition duration-300 flex flex-col">
                     <h2 class="text-3xl font-rockwell text-rich-black mb-4 text-center">
                         Hospitality Content Creation
                     </h2>
@@ -180,8 +146,8 @@
                     </div>
                 </div>
 
-                <!-- Service 2: Digital & Local SEO Audit (TOP-LEFT) -->
-                <div class="pentagon-item bg-gray-50 p-8 rounded-xl shadow-md border border-muted-silver-gray hover:shadow-lg transition duration-300 flex flex-col">
+                <!-- Service 2: Digital & Local SEO Audit -->
+                <div class="service-item-card bg-gray-50 p-8 rounded-xl shadow-md border border-muted-silver-gray hover:shadow-lg transition duration-300 flex flex-col">
                     <h2 class="text-3xl font-rockwell text-rich-black mb-4 text-center">
                         Digital & Local SEO Audit
                     </h2>
@@ -199,8 +165,8 @@
                     </div>
                 </div>
 
-                <!-- Service 3: Custom Digital Marketing Strategy (TOP-RIGHT) -->
-                <div class="pentagon-item bg-gray-50 p-8 rounded-xl shadow-md border border-muted-silver-gray hover:shadow-lg transition duration-300 flex flex-col">
+                <!-- Service 3: Custom Digital Marketing Strategy -->
+                <div class="service-item-card bg-gray-50 p-8 rounded-xl shadow-md border border-muted-silver-gray hover:shadow-lg transition duration-300 flex flex-col">
                     <h2 class="text-3xl font-rockwell text-rich-black mb-4 text-center">
                         Digital Marketing Strategy
                     </h2>
@@ -219,8 +185,8 @@
                     </div>
                 </div>
 
-                <!-- Service 4: Brand Experience & Event Strategy (BOTTOM-LEFT) -->
-                <div class="pentagon-item bg-gray-50 p-8 rounded-xl shadow-md border border-muted-silver-gray hover:shadow-lg transition duration-300 flex flex-col">
+                <!-- Service 4: Brand Experience & Event Strategy -->
+                <div class="service-item-card bg-gray-50 p-8 rounded-xl shadow-md border border-muted-silver-gray hover:shadow-lg transition duration-300 flex flex-col">
                     <h2 class="text-3xl font-rockwell text-rich-black mb-4 text-center">
                         Brand Event Strategy
                     </h2>
@@ -239,8 +205,8 @@
                     </div>
                 </div>
 
-                <!-- Service 5: Operational Streamlining & Tech Integration (BOTTOM-RIGHT) -->
-                <div class="pentagon-item bg-gray-50 p-8 rounded-xl shadow-md border border-muted-silver-gray hover:shadow-lg transition duration-300 flex flex-col">
+                <!-- Service 5: Operational Streamlining & Tech Integration -->
+                <div class="service-item-card bg-gray-50 p-8 rounded-xl shadow-md border border-muted-silver-gray hover:shadow-lg transition duration-300 flex flex-col">
                     <h2 class="text-3xl font-rockwell text-rich-black mb-4 text-center">
                         Operational Streamlining & Tech
                     </h2>
