@@ -39,6 +39,97 @@
             height: 100%;
             border: 0;
         }
+
+        /* Custom CSS for Pentagon Layout */
+        .pentagon-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start; /* Align items to the start of the flex container */
+            position: relative;
+            max-width: 1200px; /* Max width for the pentagon container */
+            margin: 0 auto;
+            padding-top: 50px; /* Space for the top element */
+            padding-bottom: 50px; /* Space for the bottom elements */
+        }
+
+        .pentagon-item {
+            width: 100%; /* Full width on small screens */
+            max-width: 380px; /* Max width for each card */
+            margin: 1rem; /* Spacing between cards */
+            display: flex; /* Ensure content stretches within card */
+            flex-direction: column; /* Stack content vertically */
+        }
+
+        /* Large screens (lg breakpoint) specific positioning for pentagon */
+        @media (min-width: 1024px) {
+            .pentagon-container {
+                height: 700px; /* Fixed height for pentagon shape on large screens */
+                align-items: center; /* Center items vertically within the fixed height */
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+
+            .pentagon-item {
+                position: absolute;
+                width: 320px; /* Smaller fixed width for pentagon elements */
+                margin: 0; /* Remove margin for absolute positioning */
+            }
+
+            /* Positioning for each item to form a pentagon */
+            .pentagon-item:nth-child(1) { /* Hospitality Content Creation */
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .pentagon-item:nth-child(2) { /* Digital & Local SEO Audit */
+                top: 25%;
+                left: 15%;
+                transform: translateX(-50%);
+            }
+            .pentagon-item:nth-child(3) { /* Digital Marketing Strategy */
+                top: 25%;
+                right: 15%;
+                transform: translateX(50%);
+            }
+            .pentagon-item:nth-child(4) { /* Brand Event Strategy */
+                bottom: 0;
+                left: 30%;
+                transform: translateX(-50%);
+            }
+            .pentagon-item:nth-child(5) { /* Operational Streamlining & Tech */
+                bottom: 0;
+                right: 30%;
+                transform: translateX(50%);
+            }
+        }
+
+        /* Adjustments for medium screens */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .pentagon-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+                gap: 2rem;
+                justify-items: center;
+                align-items: flex-start;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+            .pentagon-item {
+                width: auto; /* Let grid handle width */
+                max-width: 380px;
+                margin: 0;
+            }
+            /* Override specific positioning for medium screens */
+            .pentagon-item:nth-child(1),
+            .pentagon-item:nth-child(2),
+            .pentagon-item:nth-child(3),
+            .pentagon-item:nth-child(4),
+            .pentagon-item:nth-child(5) {
+                position: static;
+                transform: none;
+            }
+        }
     </style>
 </head>
 <body class="font-montserrat bg-gray-100 text-rich-black">
@@ -71,14 +162,37 @@
         </div>
     </section>
 
-    <!-- Services List Section -->
+    <!-- Services List Section - Pentagon Layout -->
     <section class="py-16 md:py-24 bg-white rounded-3xl shadow-xl mx-4 md:mx-8 -mt-16 relative z-20">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <h2 class="text-3xl md:text-4xl font-rockwell text-center mb-12 text-rich-black">
+                How We Help Your Brand Shine
+            </h2>
+            <div class="pentagon-container">
 
-                <!-- Service 1: Digital Presence & Local SEO Audit -->
-                <div class="bg-gray-50 p-8 rounded-xl shadow-md border border-muted-silver-gray hover:shadow-lg transition duration-300 flex flex-col">
-                    <h2 class="text-3xl font-rockwell text-rich-black mb-4 text-center md:text-left">
+                <!-- Service 1: Hospitality Content Creation (TOP) -->
+                <div class="pentagon-item bg-gray-50 p-8 rounded-xl shadow-md border border-muted-silver-gray hover:shadow-lg transition duration-300 flex flex-col">
+                    <h2 class="text-3xl font-rockwell text-rich-black mb-4 text-center">
+                        Hospitality Content Creation
+                    </h2>
+                    <p class="text-gray-700 mb-6 flex-grow">
+                        Creation of engaging, brand-aligned content. Focuses on visual storytelling for your unique customer experience across digital channels.
+                    </p>
+                    <h3 class="text-xl font-rockwell text-vibrant-sky-blue mb-2">What's Included:</h3>
+                    <ul class="list-disc list-inside text-gray-700 mb-6">
+                        <li>Monthly Content Plan</li>
+                        <li>Social Media Post Concepts</li>
+                        <li>Short Video Scripts</li>
+                        <li>Blog Post Drafts</li>
+                    </ul>
+                    <div class="text-right mt-auto">
+                        <p class="text-2xl font-bold text-rich-black">Starting from $1,000</p>
+                    </div>
+                </div>
+
+                <!-- Service 2: Digital & Local SEO Audit (TOP-LEFT) -->
+                <div class="pentagon-item bg-gray-50 p-8 rounded-xl shadow-md border border-muted-silver-gray hover:shadow-lg transition duration-300 flex flex-col">
+                    <h2 class="text-3xl font-rockwell text-rich-black mb-4 text-center">
                         Digital & Local SEO Audit
                     </h2>
                     <p class="text-gray-700 mb-6 flex-grow">
@@ -95,9 +209,9 @@
                     </div>
                 </div>
 
-                <!-- Service 2: Custom Digital Marketing Strategy & Implementation -->
-                <div class="bg-gray-50 p-8 rounded-xl shadow-md border border-muted-silver-gray hover:shadow-lg transition duration-300 flex flex-col">
-                    <h2 class="text-3xl font-rockwell text-rich-black mb-4 text-center md:text-left">
+                <!-- Service 3: Digital Marketing Strategy (TOP-RIGHT) -->
+                <div class="pentagon-item bg-gray-50 p-8 rounded-xl shadow-md border border-muted-silver-gray hover:shadow-lg transition duration-300 flex flex-col">
+                    <h2 class="text-3xl font-rockwell text-rich-black mb-4 text-center">
                         Digital Marketing Strategy
                     </h2>
                     <p class="text-gray-700 mb-6 flex-grow">
@@ -115,9 +229,9 @@
                     </div>
                 </div>
 
-                <!-- Service 3: Brand Experience & Event Strategy -->
-                <div class="bg-gray-50 p-8 rounded-xl shadow-md border border-muted-silver-gray hover:shadow-lg transition duration-300 flex flex-col">
-                    <h2 class="text-3xl font-rockwell text-rich-black mb-4 text-center md:text-left">
+                <!-- Service 4: Brand Experience & Event Strategy (BOTTOM-LEFT) -->
+                <div class="pentagon-item bg-gray-50 p-8 rounded-xl shadow-md border border-muted-silver-gray hover:shadow-lg transition duration-300 flex flex-col">
+                    <h2 class="text-3xl font-rockwell text-rich-black mb-4 text-center">
                         Brand Event Strategy
                     </h2>
                     <p class="text-gray-700 mb-6 flex-grow">
@@ -135,9 +249,9 @@
                     </div>
                 </div>
 
-                <!-- Service 4: Operational Streamlining & Tech Integration -->
-                <div class="bg-gray-50 p-8 rounded-xl shadow-md border border-muted-silver-gray hover:shadow-lg transition duration-300 flex flex-col">
-                    <h2 class="text-3xl font-rockwell text-rich-black mb-4 text-center md:text-left">
+                <!-- Service 5: Operational Streamlining & Tech Integration (BOTTOM-RIGHT) -->
+                <div class="pentagon-item bg-gray-50 p-8 rounded-xl shadow-md border border-muted-silver-gray hover:shadow-lg transition duration-300 flex flex-col">
+                    <h2 class="text-3xl font-rockwell text-rich-black mb-4 text-center">
                         Operational Streamlining & Tech
                     </h2>
                     <p class="text-gray-700 mb-6 flex-grow">
