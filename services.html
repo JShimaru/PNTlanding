@@ -40,94 +40,84 @@
             border: 0;
         }
 
-        /* Custom CSS for Pentagon Layout */
+        /* Custom CSS for Responsive Pentagon-like Layout (No Overlap) */
         .pentagon-container {
-            display: flex;
+            display: flex; /* Default to flex for smaller screens */
             flex-wrap: wrap;
             justify-content: center;
             align-items: flex-start; /* Align items to the start of the flex container */
-            position: relative;
             max-width: 1200px; /* Max width for the pentagon container */
             margin: 0 auto;
-            padding-top: 50px; /* Space for the top element */
-            padding-bottom: 50px; /* Space for the bottom elements */
+            gap: 2rem; /* Spacing between items on smaller screens */
         }
 
         .pentagon-item {
             width: 100%; /* Full width on small screens */
             max-width: 380px; /* Max width for each card */
-            margin: 1rem; /* Spacing between cards */
             display: flex; /* Ensure content stretches within card */
             flex-direction: column; /* Stack content vertically */
+            position: static;
+            transform: none;
         }
 
-        /* Large screens (lg breakpoint) specific positioning for pentagon */
-        @media (min-width: 1024px) {
-            .pentagon-container {
-                height: 700px; /* Fixed height for pentagon shape on large screens */
-                align-items: center; /* Center items vertically within the fixed height */
-                padding-top: 0;
-                padding-bottom: 0;
-            }
-
-            .pentagon-item {
-                position: absolute;
-                width: 320px; /* Smaller fixed width for pentagon elements */
-                margin: 0; /* Remove margin for absolute positioning */
-            }
-
-            /* Positioning for each item to form a pentagon */
-            .pentagon-item:nth-child(1) { /* Hospitality Content Creation */
-                top: 0;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            .pentagon-item:nth-child(2) { /* Digital & Local SEO Audit */
-                top: 25%;
-                left: 15%;
-                transform: translateX(-50%);
-            }
-            .pentagon-item:nth-child(3) { /* Digital Marketing Strategy */
-                top: 25%;
-                right: 15%;
-                transform: translateX(50%);
-            }
-            .pentagon-item:nth-child(4) { /* Brand Event Strategy */
-                bottom: 0;
-                left: 30%;
-                transform: translateX(-50%);
-            }
-            .pentagon-item:nth-child(5) { /* Operational Streamlining & Tech */
-                bottom: 0;
-                right: 30%;
-                transform: translateX(50%);
-            }
-        }
-
-        /* Adjustments for medium screens */
+        /* Medium screens (md breakpoint) */
         @media (min-width: 768px) and (max-width: 1023px) {
             .pentagon-container {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
-                gap: 2rem;
-                justify-items: center;
+                justify-items: center; /* Center items within their grid cells */
                 align-items: flex-start;
-                padding-top: 0;
-                padding-bottom: 0;
+                gap: 2rem; /* Spacing between items */
             }
             .pentagon-item {
                 width: auto; /* Let grid handle width */
-                max-width: 380px;
-                margin: 0;
+                margin: 0; /* Remove flex margin */
             }
-            /* Override specific positioning for medium screens */
-            .pentagon-item:nth-child(1),
-            .pentagon-item:nth-child(2),
-            .pentagon-item:nth-child(3),
-            .pentagon-item:nth-child(4),
+            /* Center the last item (5th) if it's alone in a row on medium screens */
             .pentagon-item:nth-child(5) {
-                position: static;
-                transform: none;
+                grid-column: 1 / span 2; /* Make it span both columns */
+                justify-self: center; /* Center it within the spanned columns */
+            }
+        }
+
+        /* Large screens (lg breakpoint) specific positioning for pentagon visual */
+        @media (min-width: 1024px) {
+            .pentagon-container {
+                display: grid;
+                grid-template-columns: repeat(6, 1fr); /* 6 columns for fine-grained control */
+                height: auto; /* Let content define height */
+                align-items: start; /* Align items to the top of their grid cells */
+                justify-items: center; /* Center items within their grid columns */
+                gap: 2rem 1rem; /* Row gap, column gap */
+                padding-top: 0; /* Reset padding from smaller screens */
+                padding-bottom: 0; /* Reset padding from smaller screens */
+            }
+
+            .pentagon-item {
+                width: 320px; /* Fixed width for consistency on large screens */
+                margin: 0; /* Remove any lingering margins from smaller screens */
+            }
+
+            /* Positioning for each item to form a non-overlapping pentagon visual */
+            .pentagon-item:nth-child(1) { /* Hospitality Content Creation (TOP) */
+                grid-column: 3 / span 2; /* Spans 2 columns, centered in a 6-column grid */
+                margin-bottom: 2rem; /* Push down next row slightly */
+            }
+            .pentagon-item:nth-child(2) { /* Digital & Local SEO Audit (TOP-LEFT) */
+                grid-column: 1 / span 2; /* Spans 2 columns on left */
+                margin-top: 5rem; /* Push down relative to top item */
+            }
+            .pentagon-item:nth-child(3) { /* Digital Marketing Strategy (TOP-RIGHT) */
+                grid-column: 5 / span 2; /* Spans 2 columns on right */
+                margin-top: 5rem; /* Push down relative to top item */
+            }
+            .pentagon-item:nth-child(4) { /* Brand Experience & Event Strategy (BOTTOM-LEFT) */
+                grid-column: 2 / span 2; /* Spans 2 columns, shifted right to align with pentagon base */
+                margin-top: 5rem; /* Push down relative to middle row */
+            }
+            .pentagon-item:nth-child(5) { /* Operational Streamlining & Tech Integration (BOTTOM-RIGHT) */
+                grid-column: 4 / span 2; /* Spans 2 columns, shifted left to align with pentagon base */
+                margin-top: 5rem; /* Push down relative to middle row */
             }
         }
     </style>
@@ -209,7 +199,7 @@
                     </div>
                 </div>
 
-                <!-- Service 3: Digital Marketing Strategy (TOP-RIGHT) -->
+                <!-- Service 3: Custom Digital Marketing Strategy (TOP-RIGHT) -->
                 <div class="pentagon-item bg-gray-50 p-8 rounded-xl shadow-md border border-muted-silver-gray hover:shadow-lg transition duration-300 flex flex-col">
                     <h2 class="text-3xl font-rockwell text-rich-black mb-4 text-center">
                         Digital Marketing Strategy
