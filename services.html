@@ -42,7 +42,7 @@
 
         /* Custom CSS for Responsive Service Layout */
         .services-grid-container {
-            display: grid;
+            display: grid; /* Default to grid for smaller screens */
             grid-template-columns: 1fr; /* Single column on small screens */
             gap: 2rem; /* Spacing between items */
             justify-items: center; /* Center items in their grid cells */
@@ -72,15 +72,20 @@
         /* Large screens (lg breakpoint) */
         @media (min-width: 1024px) {
             .services-grid-container {
-                /* Use auto-fit to create columns and center the entire group */
-                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                display: flex; /* Changed to flex for better centering of incomplete rows */
+                flex-wrap: wrap; /* Allow items to wrap to the next line */
+                justify-content: center; /* This centers the items in the row */
                 gap: 3rem; /* More spacing on large screens */
-                justify-content: center; /* This centers the grid items when the row is not full */
+                /* Removed grid-template-columns here as flex is now used */
             }
-            /* Reset any specific positioning for large screens as auto-fit handles it */
             .service-item-card {
-                grid-column: auto;
-                justify-self: auto;
+                width: 380px; /* Fixed width for consistency on large screens */
+                max-width: none; /* Remove max-width to allow fixed width */
+            }
+            /* Reset any specific positioning for large screens as flex handles it */
+            .service-item-card:nth-child(5) {
+                grid-column: auto; /* Reset column span */
+                justify-self: auto; /* Reset justify-self */
             }
         }
     </style>
