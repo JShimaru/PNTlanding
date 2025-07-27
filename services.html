@@ -40,7 +40,7 @@
             border: 0;
         }
 
-        /* Custom CSS for Two-Row Responsive Layout (No Overlap) */
+        /* Custom CSS for Responsive Service Layout */
         .services-grid-container {
             display: grid;
             grid-template-columns: 1fr; /* Single column on small screens */
@@ -62,7 +62,8 @@
             .services-grid-container {
                 grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
             }
-            .service-item-card:nth-child(5) { /* Center the last item if it's alone in a row */
+            /* Center the last item (5th) if it's alone in a row on medium screens */
+            .service-item-card:nth-child(5) {
                 grid-column: 1 / span 2; /* Make it span both columns */
                 justify-self: center; /* Center it within the spanned columns */
             }
@@ -71,20 +72,16 @@
         /* Large screens (lg breakpoint) */
         @media (min-width: 1024px) {
             .services-grid-container {
-                grid-template-columns: repeat(3, 1fr); /* 3 columns on large screens */
+                /* Use auto-fit to create columns and center the entire group */
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
                 gap: 3rem; /* More spacing on large screens */
+                justify-content: center; /* This centers the grid items when the row is not full */
             }
-            /* Reset centering for the 5th item on large screens if it's part of a 3-column layout */
-            .service-item-card:nth-child(5) {
-                grid-column: auto; /* Reset column span */
-                justify-self: auto; /* Reset justify-self */
+            /* Reset any specific positioning for large screens as auto-fit handles it */
+            .service-item-card {
+                grid-column: auto;
+                justify-self: auto;
             }
-            /* For 5 items in a 3-column grid, the last two will naturally be on a new row.
-               We can center them by adjusting the grid-template-columns for that row if needed,
-               but for simplicity and responsiveness, a standard 3-column grid with auto-placement
-               often works well. If explicit centering of the last two is desired,
-               a sub-grid or more complex CSS might be needed.
-               For this request, a standard grid that flows into two rows is sufficient. */
         }
     </style>
 </head>
@@ -126,7 +123,7 @@
             </h2>
             <div class="services-grid-container">
 
-                <!-- Service 1: Hospitality Content Creation (TOP-LEFT in 3-col, TOP in 2-col) -->
+                <!-- Service 1: Hospitality Content Creation (TOP) -->
                 <div class="service-item-card bg-gray-50 p-8 rounded-xl shadow-md border border-muted-silver-gray hover:shadow-lg transition duration-300 flex flex-col">
                     <h2 class="text-3xl font-rockwell text-rich-black mb-4 text-center">
                         Hospitality Content Creation
