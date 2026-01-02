@@ -9,12 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Rockwell:wght@700&display=swap" rel="stylesheet">
     <style>
         /* Custom font families */
-        .font-rockwell {
-            font-family: 'Rockwell', serif;
-        }
-        .font-montserrat {
-            font-family: 'Montserrat', sans-serif;
-        }
+        .font-rockwell { font-family: 'Rockwell', serif; }
+        .font-montserrat { font-family: 'Montserrat', sans-serif; }
         /* Custom color palette */
         .bg-rich-black { background-color: #0A0A0A; }
         .text-rich-black { color: #0A0A0A; }
@@ -27,17 +23,22 @@
 <body class="font-montserrat bg-gray-100 text-rich-black">
 
     <!-- Header/Navigation -->
-    <header class="bg-rich-black text-white py-4 shadow-md relative z-50">
+    <header class="bg-rich-black text-white py-4 shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-4 flex justify-between items-center">
-            <a href="/" class="h-12 flex items-center">
-                <img src="PNT Logo.png" alt="Path Not Traveled Logo" class="h-full object-contain">
+            <a href="index.html" class="h-12 flex items-center font-rockwell text-xl text-white">
+                <img src="PNT Logo.png" onerror="this.style.display='none'" alt="PNT" class="h-full object-contain mr-2 hidden md:block">
+                Path Not Traveled
             </a>
-            <nav>
-                <a href="/" class="text-white hover:text-vibrant-sky-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a>
-                <a href="/about.html" class="text-vibrant-sky-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">About</a>
-                <a href="/services.html" class="text-white hover:text-vibrant-sky-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Services</a>
-                <a href="/#contact" class="text-white hover:text-vibrant-sky-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contact</a>
+            <nav class="hidden md:flex space-x-2">
+                <a href="index.html" class="text-white hover:text-vibrant-sky-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a>
+                <a href="about.html" class="text-vibrant-sky-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">About</a>
+                <a href="services.html" class="text-white hover:text-vibrant-sky-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Services</a>
+                <a href="portfolio.html" class="text-white hover:text-vibrant-sky-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Portfolio</a>
+                <a href="index.html#contact" class="text-white hover:text-vibrant-sky-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contact</a>
             </nav>
+            <div class="md:hidden">
+                <span class="text-vibrant-sky-blue font-bold">About</span>
+            </div>
         </div>
     </header>
 
