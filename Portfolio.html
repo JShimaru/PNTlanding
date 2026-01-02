@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Path Not Traveled</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Rockwell:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom font families */
+        .font-rockwell { font-family: 'Rockwell', serif; }
+        .font-montserrat { font-family: 'Montserrat', sans-serif; }
+        
+        /* Custom color palette */
+        .bg-rich-black { background-color: #0A0A0A; }
+        .text-rich-black { color: #0A0A0A; }
+        .bg-vibrant-sky-blue { background-color: #3498DB; }
+        .text-vibrant-sky-blue { color: #3498DB; }
+        .bg-muted-silver-gray { background-color: #BDC3C7; }
+        .text-muted-silver-gray { color: #BDC3C7; }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translate3d(0, 40px, 0); }
+            to { opacity: 1; transform: translate3d(0, 0, 0); }
+        }
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out both; }
+
+        /* Testimonial Card for Portfolio */
+        .portfolio-testimonial {
+            flex: 1 1 300px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="font-montserrat bg-gray-100 text-rich-black">
+
+    <!-- Header/Navigation -->
+    <header class="bg-rich-black text-white py-4 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="h-12 flex items-center font-rockwell text-xl text-white">
+                <img src="PNT Logo.png" onerror="this.style.display='none'" alt="PNT" class="h-full object-contain mr-2 hidden md:block">
+                Path Not Traveled
+            </a>
+            <nav class="hidden md:flex space-x-2">
+                <a href="index.html" class="text-white hover:text-vibrant-sky-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a>
+                <a href="about.html" class="text-white hover:text-vibrant-sky-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">About</a>
+                <a href="services.html" class="text-white hover:text-vibrant-sky-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Services</a>
+                <a href="portfolio.html" class="text-vibrant-sky-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Portfolio</a>
+                <a href="index.html#contact" class="text-white hover:text-vibrant-sky-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contact</a>
+            </nav>
+            <div class="md:hidden">
+                <span class="text-vibrant-sky-blue font-bold">Portfolio</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-rich-black text-white py-20 text-center relative overflow-hidden rounded-b-3xl shadow-lg">
+        <div class="absolute inset-0 bg-rich-black opacity-50"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <h1 class="text-4xl md:text-5xl font-rockwell text-vibrant-sky-blue leading-tight mb-6 animate-fade-in-up">
+                Operational Impact
+            </h1>
+            <p class="text-lg md:text-xl text-muted-silver-gray max-w-3xl mx-auto mb-8 animate-fade-in-up">
+                Real-world application of the Path Not Traveled methodology: From Hospitality to Logistics.
+            </p>
+        </div>
+    </section>
+
+    <!-- CASE STUDIES SECTION -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            
+            <!-- Case Study 1: Red@28th -->
+            <div class="flex flex-col md:flex-row bg-white rounded-2xl shadow-lg overflow-hidden mb-16 border-l-8 border-vibrant-sky-blue">
+                <div class="md:w-1/3 bg-rich-black p-8 text-white flex flex-col justify-center">
+                    <h3 class="text-3xl font-rockwell mb-2 text-vibrant-sky-blue">Red@28th</h3>
+                    <p class="text-sm uppercase tracking-wide text-muted-silver-gray mb-6">Operations Manager & Community Engineer</p>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="font-bold text-vibrant-sky-blue">The Vision</p>
+                            <p class="text-sm text-gray-300">Scaling a "Multicultural Literary Lounge" from a neighborhood staple to a multi-location franchise.</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-vibrant-sky-blue">The Challenge</p>
+                            <p class="text-sm text-gray-300">Opening the University location "dry" (no liquor license) in a high-volume market.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-2/3 p-8">
+                    <h4 class="text-xl font-bold mb-4 font-rockwell">Strategy: The Community-First Pivot</h4>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Faced with a regulatory bottleneck, we pivoted from a bar-first model to a community-anchor model. We implemented <strong>Human Capital Development</strong> by creating the "Hookah Specialist" role—turning servers into brand ambassadors—and focused on <strong>Resource Optimization</strong> by developing pairing menus to move stagnant inventory.
+                    </p>
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <p class="font-bold text-rich-black mb-2">The Result</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Stabilized revenue during the "dry" period by targeting the daytime college market.</li>
+                            <li>Established SOPs for inventory and staffing used in subsequent franchise expansions.</li>
+                            <li>Created a loyal "Third Place" environment that bridged diverse demographics.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 2: Logistics -->
+            <div class="flex flex-col md:flex-row bg-white rounded-2xl shadow-lg overflow-hidden mb-16 border-l-8 border-gray-600">
+                <div class="md:w-1/3 bg-rich-black p-8 text-white flex flex-col justify-center">
+                    <h3 class="text-3xl font-rockwell mb-2 text-white">Logistics & Transit</h3>
+                    <p class="text-sm uppercase tracking-wide text-muted-silver-gray mb-6">MARTA Operator & Uber Diamond Driver</p>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="font-bold text-white">The Scope</p>
+                            <p class="text-sm text-gray-300">Bridging the gap between Mass Transit systems and Gig-Economy flexibility.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-2/3 p-8">
+                    <h4 class="text-xl font-bold mb-4 font-rockwell">From Mass Transit to Micro-Logistics</h4>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        My experience operating for <strong>MARTA</strong> taught me the rigidity of safety and mass schedules, while becoming a <strong>Diamond Driver for Uber</strong> taught me the agility of the gig economy. I used the Uber platform not just for income, but as a live case study—analyzing algorithm failures, route optimization, and using the flexibility to fund my return to business school.
+                    </p>
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <p class="font-bold text-rich-black mb-2">The Insight</p>
+                        <p class="text-gray-700">
+                            MARTA had community but lacked flexibility; Uber had flexibility but lacked community. This gap is the foundation for our next venture.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Future Project: Load Off -->
+            <div class="text-center max-w-4xl mx-auto bg-vibrant-sky-blue text-white rounded-2xl p-10 shadow-xl mb-20">
+                <h3 class="text-3xl font-rockwell mb-2">Coming Soon: Load Off, LLC</h3>
+                <p class="font-bold opacity-90 mb-6 tracking-wide">Launching 2026 • A Path Not Traveled Company</p>
+                <p class="text-lg leading-relaxed">
+                    Load Off is the synthesis of our hospitality and logistics experience. It is a <strong>Community-Sourced Laundry Marketplace</strong> designed to connect customers, local laundromats, and community couriers. We are building a system that offers the speed of the gig economy with the trust of a local neighbor.
+                </p>
+            </div>
+
+            <!-- Operational Praise Section (Sierra & Extras) -->
+            <div class="border-t border-gray-300 pt-16">
+                <h2 class="text-3xl font-rockwell text-center mb-12 text-rich-black">Operational Praise</h2>
+                <div class="flex flex-wrap justify-center gap-8">
+                    
+                    <!-- Sierra S (Featured) -->
+                    <div class="portfolio-testimonial bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                        <p class="text-gray-600 italic mb-4">
+                            "Thomas was so resilient and solution based. He is always there when I need him and one of the most reliable people I know."
+                        </p>
+                        <p class="font-bold text-rich-black">– Sierra S., <span class="text-vibrant-sky-blue text-sm font-normal">Former Manager</span></p>
+                    </div>
+
+                    <!-- Extra Quote 1 -->
+                    <div class="portfolio-testimonial bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                        <p class="text-gray-600 italic mb-4">
+                            "He was extremely kind and courteous."
+                        </p>
+                        <p class="font-bold text-rich-black">– Community Member</p>
+                    </div>
+
+                    <!-- Extra Quote 2 -->
+                    <div class="portfolio-testimonial bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                        <p class="text-gray-600 italic mb-4">
+                            "You’re always so helpful and willing to support emerging artists!!"
+                        </p>
+                        <p class="font-bold text-rich-black">– Local Artist</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-rich-black text-muted-silver-gray py-8 text-center rounded-t-3xl mt-8">
+        <div class="container mx-auto px-4">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Path Not Traveled. All rights reserved.</p>
+            <p class="text-sm mt-2">Designed with a passion for discovery and excellence.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
