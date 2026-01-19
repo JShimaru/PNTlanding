@@ -3,16 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Path Not Traveled - Discover New Pathways to Freedom & Profits</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Path Not Traveled - Venture Studio & Strategy</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Rockwell:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* Custom font families */
         .font-rockwell { font-family: 'Rockwell', serif; }
         .font-montserrat { font-family: 'Montserrat', sans-serif; }
         
-        /* Custom color palette */
         .bg-rich-black { background-color: #0A0A0A; }
         .text-rich-black { color: #0A0A0A; }
         .bg-vibrant-sky-blue { background-color: #3498DB; }
@@ -20,255 +17,141 @@
         .bg-muted-silver-gray { background-color: #BDC3C7; }
         .text-muted-silver-gray { color: #BDC3C7; }
         
-        /* Animations */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translate3d(0, 40px, 0); }
             to { opacity: 1; transform: translate3d(0, 0, 0); }
         }
         .animate-fade-in-up { animation: fadeInUp 0.8s ease-out both; }
         .delay-200 { animation-delay: 0.2s; }
-        .delay-400 { animation-delay: 0.4s; }
-
-        /* Responsive iframe */
-        .responsive-iframe-container {
-            position: relative;
-            padding-bottom: 75%;
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            background: #fff;
-        }
-        .responsive-iframe-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        /* Flex Layout for Centered Cards */
-        .landing-services-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .landing-service-item-card {
-            flex: 1 1 300px; /* Grow, Shrink, Basis */
-            max-width: 380px;
-            width: 100%;
-        }
-
-        /* Testimonial Card Specifics */
-        .testimonial-card {
-            flex: 1 1 350px;
-            max-width: 450px;
-            width: 100%;
-        }
     </style>
 </head>
-<body class="font-montserrat bg-gray-100 text-rich-black">
+<body class="font-montserrat bg-gray-50 text-rich-black">
 
-    <!-- Header/Navigation -->
+    <!-- Header -->
     <header class="bg-rich-black text-white py-4 shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <a href="index.html" class="h-12 flex items-center font-rockwell text-xl text-white">
                 <img src="PNT Logo.png" onerror="this.style.display='none'" alt="PNT" class="h-full object-contain mr-2 hidden md:block">
                 Path Not Traveled
             </a>
-            <nav class="hidden md:flex space-x-2">
-                <a href="index.html" class="text-vibrant-sky-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a>
-                <a href="about.html" class="text-white hover:text-vibrant-sky-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">About</a>
-                <a href="services.html" class="text-white hover:text-vibrant-sky-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Services</a>
-                <a href="portfolio.html" class="text-white hover:text-vibrant-sky-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Portfolio</a>
-                <a href="#contact" class="text-white hover:text-vibrant-sky-blue px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contact</a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-vibrant-sky-blue font-medium">Home</a>
+                <a href="portfolio.html" class="text-white hover:text-vibrant-sky-blue transition">Ventures</a>
+                <a href="services.html" class="text-white hover:text-vibrant-sky-blue transition">Consulting</a>
+                <a href="testimonials.html" class="text-white hover:text-vibrant-sky-blue transition">Impact</a>
+                <a href="#contact" class="text-white hover:text-vibrant-sky-blue transition">Contact</a>
             </nav>
-            <!-- Mobile Menu Button Placeholder (Optional) -->
-            <div class="md:hidden">
-                <a href="portfolio.html" class="text-vibrant-sky-blue text-sm font-bold">Portfolio</a>
-            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="bg-rich-black text-white py-20 md:py-32 text-center relative overflow-hidden rounded-b-3xl shadow-lg" style="background-image: url('LandingBackground.png'); background-color: #0A0A0A; background-size: cover; background-position: center;">
-        <div class="absolute inset-0 bg-black opacity-60"></div>
+    <section class="bg-rich-black text-white py-24 md:py-32 text-center relative overflow-hidden rounded-b-3xl shadow-2xl">
+        <div class="absolute inset-0 bg-black opacity-40"></div> 
         <div class="container mx-auto px-4 relative z-10">
-            <h1 class="text-4xl md:text-6xl font-rockwell text-vibrant-sky-blue leading-tight mb-6 animate-fade-in-up">
-                Discover New Pathways to Freedom & Profits.
+            <!-- UPDATED EST DATE -->
+            <span class="inline-block py-1 px-3 rounded-full bg-gray-800 text-vibrant-sky-blue text-xs font-bold tracking-widest uppercase mb-4 animate-fade-in-up">Est. 2018 • Charlotte / Atlanta</span>
+            <h1 class="text-4xl md:text-6xl font-rockwell leading-tight mb-6 animate-fade-in-up delay-200">
+                Incubating <span class="text-vibrant-sky-blue">Abundance</span>. <br>
+                Building <span class="text-muted-silver-gray">Systems</span>.
             </h1>
-            <p class="text-xl md:text-2xl text-muted-silver-gray max-w-3xl mx-auto mb-8 animate-fade-in-up delay-200">
-                Guiding you to unlock unprecedented growth and true independence through strategic operations and community building.
+            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 animate-fade-in-up delay-200">
+                Path Not Traveled is a human-centered venture studio. We build proprietary companies that solve systemic problems, and we partner with select brands to do the same.
             </p>
-            <a href="#contact" class="inline-block bg-vibrant-sky-blue text-rich-black font-bold py-3 px-8 rounded-full shadow-lg hover:bg-white transition duration-300 animate-fade-in-up delay-400">
-                Let's Chart Your Success
-            </a>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-16 md:py-24 bg-white rounded-3xl shadow-xl mx-4 md:mx-8 -mt-16 relative z-20">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-rockwell text-center mb-12 text-rich-black">
-                How I Help Your Brand Shine
-            </h2>
-            <div class="landing-services-grid">
-                <!-- Service 1 -->
-                <div class="landing-service-item-card bg-gray-50 p-6 rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition duration-300 flex flex-col items-center">
-                    <div class="text-vibrant-sky-blue text-4xl mb-4">
-                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-rockwell mb-3 text-center">Digital & Local Presence</h3>
-                    <p class="text-gray-700 text-center">Crafting personalized, customer-centric campaigns to expand your online reach and strengthen local engagement.</p>
-                </div>
-                <!-- Service 2 -->
-                <div class="landing-service-item-card bg-gray-50 p-6 rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition duration-300 flex flex-col items-center">
-                    <div class="text-vibrant-sky-blue text-4xl mb-4">
-                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-rockwell mb-3 text-center">Enhanced User Experiences</h3>
-                    <p class="text-gray-700 text-center">Developing brand-focused events and implementing systems to elevate every customer interaction.</p>
-                </div>
-                <!-- Service 3 -->
-                <div class="landing-service-item-card bg-gray-50 p-6 rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition duration-300 flex flex-col items-center">
-                    <div class="text-vibrant-sky-blue text-4xl mb-4">
-                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-rockwell mb-3 text-center">Collaborative Guidance</h3>
-                    <p class="text-gray-700 text-center">Partnering with you to deconstruct complex challenges and ensure your project truly shines.</p>
-                </div>
-            </div>
-            <div class="text-center mt-12">
-                 <a href="portfolio.html" class="inline-block bg-rich-black text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-vibrant-sky-blue hover:text-white transition duration-300">
-                    View Operational Impact
+            <div class="flex flex-col md:flex-row justify-center gap-4 animate-fade-in-up delay-200">
+                <a href="portfolio.html" class="bg-vibrant-sky-blue text-rich-black font-bold py-3 px-8 rounded-full shadow-lg hover:bg-white transition duration-300">
+                    View Our Ventures
+                </a>
+                <a href="services.html" class="border border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-rich-black transition duration-300">
+                    Consulting Availability
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- TESTIMONIALS SECTION (Centered) -->
-    <section class="py-20 bg-rich-black text-white">
+    <!-- The Ecosystem (Ventures) -->
+    <section class="py-20">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-rockwell text-center mb-12 text-vibrant-sky-blue">
-                What Partners Say
-            </h2>
-            <!-- Changed to landing-services-grid which is now a Flexbox container for centering -->
-            <div class="landing-services-grid">
+            <h2 class="text-3xl font-rockwell text-center mb-12 text-rich-black">The Ecosystem</h2>
+            <div class="grid md:grid-cols-3 gap-8">
                 
-                <!-- Testimonial 1: Paul C -->
-                <div class="testimonial-card bg-gray-900 p-8 rounded-xl border border-gray-800 relative hover:border-vibrant-sky-blue transition duration-300">
-                    <div class="text-vibrant-sky-blue text-5xl absolute top-4 left-4 opacity-30 font-serif">"</div>
-                    <p class="text-gray-300 italic mb-6 relative z-10 pt-4">
-                        Path Not Traveled has been a real game-changer... They have a personal yet strategic approach. I see them as more than a marketing agency - I see them as a partner in my success.
-                    </p>
-                    <div>
-                        <p class="font-bold text-white">Paul C.</p>
-                        <p class="text-sm text-vibrant-sky-blue">Strategic Partner</p>
-                    </div>
+                <!-- Load Off -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-8 border-vibrant-sky-blue hover:-translate-y-2 transition-transform duration-300">
+                    <h3 class="text-2xl font-bold mb-2">Load Off, LLC</h3>
+                    <p class="text-xs font-bold text-vibrant-sky-blue uppercase tracking-wide mb-4">Logistics • Launching 2026</p>
+                    <p class="text-gray-600 mb-6">Reimagining laundry logistics for the travel economy. A "Hub & Spoke" model restoring time abundance to travelers and locals.</p>
+                    <a href="portfolio.html" class="text-rich-black font-bold border-b-2 border-vibrant-sky-blue hover:text-vibrant-sky-blue">Learn More &rarr;</a>
                 </div>
 
-                <!-- Testimonial 2: Shauna C -->
-                <div class="testimonial-card bg-gray-900 p-8 rounded-xl border border-gray-800 relative hover:border-vibrant-sky-blue transition duration-300">
-                    <div class="text-vibrant-sky-blue text-5xl absolute top-4 left-4 opacity-30 font-serif">"</div>
-                    <p class="text-gray-300 italic mb-6 relative z-10 pt-4">
-                        He was very attentive, detailed and prompt. He explained things well for a person with no website tech knowledge. I would recommend him to others and work with him again.
-                    </p>
-                    <div>
-                        <p class="font-bold text-white">Shauna C.</p>
-                        <p class="text-sm text-vibrant-sky-blue">Client</p>
-                    </div>
+                <!-- Boom Series -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-8 border-purple-500 hover:-translate-y-2 transition-transform duration-300">
+                    <h3 class="text-2xl font-bold mb-2">The Boom! Series</h3>
+                    <p class="text-xs font-bold text-purple-500 uppercase tracking-wide mb-4">Digital Media • In Development</p>
+                    <p class="text-gray-600 mb-6">A casual-first mobile gaming franchise reimagining classic board games with explosive mechanics and community connection.</p>
+                    <span class="text-gray-400 text-sm font-bold">Coming Soon</span>
                 </div>
 
-                <!-- Testimonial 3: Sierra S -->
-                <div class="testimonial-card bg-gray-900 p-8 rounded-xl border border-gray-800 relative hover:border-vibrant-sky-blue transition duration-300">
-                    <div class="text-vibrant-sky-blue text-5xl absolute top-4 left-4 opacity-30 font-serif">"</div>
-                    <p class="text-gray-300 italic mb-6 relative z-10 pt-4">
-                        Thomas was so resilient and solution based. He is always there when I need him and one of the most reliable people I know.
-                    </p>
-                    <div>
-                        <p class="font-bold text-white">Sierra S.</p>
-                        <p class="text-sm text-vibrant-sky-blue">Former Manager</p>
-                    </div>
-                </div>
-
-                <!-- Testimonial 4: Michael J -->
-                <div class="testimonial-card bg-gray-900 p-8 rounded-xl border border-gray-800 relative hover:border-vibrant-sky-blue transition duration-300">
-                    <div class="text-vibrant-sky-blue text-5xl absolute top-4 left-4 opacity-30 font-serif">"</div>
-                    <p class="text-gray-300 italic mb-6 relative z-10 pt-4">
-                        I’ve known this gentleman for the better half of 20 years... People first has consistently been the drive behind most of what he does.
-                    </p>
-                    <div>
-                        <p class="font-bold text-white">Michael J.</p>
-                        <p class="text-sm text-vibrant-sky-blue">Long-term Associate</p>
-                    </div>
-                </div>
-
-                <!-- Testimonial 5: Patron -->
-                <div class="testimonial-card bg-gray-900 p-8 rounded-xl border border-gray-800 relative hover:border-vibrant-sky-blue transition duration-300">
-                    <div class="text-vibrant-sky-blue text-5xl absolute top-4 left-4 opacity-30 font-serif">"</div>
-                    <p class="text-gray-300 italic mb-6 relative z-10 pt-4">
-                        His authentic vibe seemed to fit with the establishment! I would recommend him over and over again!
-                    </p>
-                    <div>
-                        <p class="font-bold text-white">Patron</p>
-                        <p class="text-sm text-vibrant-sky-blue">Red@28th</p>
-                    </div>
+                <!-- Project Helix -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-8 border-green-600 hover:-translate-y-2 transition-transform duration-300">
+                    <h3 class="text-2xl font-bold mb-2">Project Helix</h3>
+                    <p class="text-xs font-bold text-green-600 uppercase tracking-wide mb-4">Infrastructure • R&D Phase</p>
+                    <p class="text-gray-600 mb-6">Designing the future of sustainable community hubs. A long-term initiative focused on energy independence and localized media.</p>
+                    <span class="text-gray-400 text-sm font-bold">Concept Phase</span>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Call to Action Section -->
-    <section class="bg-vibrant-sky-blue py-16 md:py-20 text-center text-rich-black rounded-t-3xl shadow-lg mt-8">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-rockwell mb-6">
-                Ready to Discover Your Path?
-            </h2>
-            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8">
-                Let's discuss how we can unlock new pathways to freedom and profits for your business.
-            </p>
-            <a href="https://calendar.app.google/Tv7dz4bJKtQm1fCS8" class="inline-block bg-rich-black text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-white hover:text-rich-black transition duration-300">
-                Schedule a Discovery Call
-            </a>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 md:py-24 relative overflow-hidden" style="background-image: url('ContactBackground.png'); background-color: #0A0A0A; background-size: cover; background-position: center;">
-        <div class="absolute inset-0 bg-rich-black opacity-80"></div>
-        <div class="container mx-auto px-4 relative z-10">
-            <h2 class="text-3xl md:text-4xl font-rockwell text-center mb-12 text-white">
-                Get In Touch
-            </h2>
-            <div class="max-w-xl mx-auto bg-white p-4 md:p-8 rounded-xl shadow-lg border border-muted-silver-gray">
-                <p class="text-center text-gray-700 mb-6">
-                    Please fill out the form below, and I'll get back to you shortly.
+    <!-- Strategic Consulting Teaser -->
+    <section class="bg-gray-900 text-white py-20 rounded-xl mx-4 shadow-inner">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h2 class="text-3xl font-rockwell mb-4 text-vibrant-sky-blue">Strategic Consulting</h2>
+                <p class="text-gray-300 text-lg mb-6 leading-relaxed">
+                    While our primary focus is incubating internal ventures, we reserve capacity for a select number of partners who share our values of sustainability, community, and operational excellence.
                 </p>
-                <!-- Google Form Embed -->
-                <div class="responsive-iframe-container">
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSelIsYHvujP1I7K3n_NME77qSz6hYQBpdK78C9_bYkG-oKgWQ/viewform?embedded=true"
-                            width="640" height="873" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-                </div>
-                <div class="mt-8 text-center text-gray-600">
-                    <p>Or connect directly:</p>
-                    <p class="mt-2">Email: <a href="mailto:thethomaslangford@gmail.com" class="text-vibrant-sky-blue hover:underline">thethomaslangford@gmail.com</a></p>
-                    <p>Phone: <a href="tel:+14049542388" class="text-vibrant-sky-blue hover:underline">(404) 954-2388</a></p>
-                </div>
+                <ul class="text-gray-400 space-y-2 mb-8">
+                    <li>✓ Operational Streamlining</li>
+                    <li>✓ Brand & Event Strategy</li>
+                    <li>✓ Digital Infrastructure</li>
+                </ul>
+                <a href="services.html" class="inline-block bg-white text-rich-black font-bold py-3 px-8 rounded-full hover:bg-vibrant-sky-blue hover:text-white transition">
+                    Check Availability
+                </a>
+            </div>
+            <div class="md:w-1/3 bg-gray-800 p-8 rounded-xl border border-gray-700 text-center">
+                <p class="text-4xl font-bold text-vibrant-sky-blue mb-2">10+</p>
+                <p class="text-gray-400 uppercase text-sm tracking-widest mb-6">Years Experience</p>
+                <p class="text-4xl font-bold text-vibrant-sky-blue mb-2">$400k+</p>
+                <p class="text-gray-400 uppercase text-sm tracking-widest">Venture Valuations</p>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-rich-black text-muted-silver-gray py-8 text-center rounded-t-3xl mt-8">
-        <div class="container mx-auto px-4">
-            <p>&copy; <script>document.write(new Date().getFullYear())</script> Path Not Traveled. All rights reserved.</p>
-            <p class="text-sm mt-2">Designed with a passion for discovery and excellence.</p>
-        </div>
+    <!-- Simple Contact Footer -->
+    <section id="contact" class="py-20 text-center">
+        <h2 class="text-3xl font-rockwell mb-6">Collaboration Inquiries</h2>
+        <p class="text-gray-600 max-w-xl mx-auto mb-8">
+            Interested in investing in our ventures or retaining strategic services? 
+            Let's determine if our paths align.
+        </p>
+        
+        <!-- SECURE EMAIL BUTTON (Obfuscated) -->
+        <script>
+            function openMail() {
+                var user = "thethomaslangford";
+                var domain = "gmail.com";
+                window.location.href = "mailto:" + user + "@" + domain;
+            }
+        </script>
+        <button onclick="openMail()" class="inline-flex items-center text-xl font-bold text-white bg-vibrant-sky-blue py-3 px-8 rounded-full hover:bg-rich-black transition shadow-lg">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            Send Inquiry
+        </button>
+    </section>
+
+    <footer class="bg-rich-black text-gray-500 py-8 text-center text-sm">
+        <p>&copy; 2026 Path Not Traveled, Inc. All rights reserved.</p>
     </footer>
 
 </body>
